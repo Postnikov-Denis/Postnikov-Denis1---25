@@ -19,4 +19,13 @@ def zad2():
     elif a % 2 != 0 and a >= 37:
         print("боковое нижнее")
     return
-print(zad2())
+
+def zad3():
+    a = int(input("Введите год: "))
+    if a % 4 == 0 and a % 100 != 0 or a % 400 == 0:
+        print("Год високосный")
+    else:
+        print("Год не является високосным")
+    return
+
+print(zad3())
