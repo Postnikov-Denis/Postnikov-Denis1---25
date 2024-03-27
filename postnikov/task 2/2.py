@@ -3,7 +3,7 @@ import random
 def zad21():
     words = []
     result = ""
-    N = input("Введите кол-во слов: ")
+    N = int(input("Введите кол-во слов: "))
     for i in range(N + 1):
         word = input("Введите слово: ")
         words.append(word)
@@ -12,7 +12,7 @@ def zad21():
     print(result)
     return
 
-print(zad21())
+#print(zad21())
 
 
 def zad22():
@@ -32,7 +32,7 @@ def zad22():
     return
 
 
-#print(zad22())
+print(zad22())
 
 
 def zad23():
