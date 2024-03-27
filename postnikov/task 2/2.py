@@ -12,7 +12,6 @@ def zad21():
     print(result)
     return
 
-#print(zad21())
 
 
 def zad22():
@@ -47,8 +46,6 @@ def zad23():
     return
 
 
-#print(zad23())
-
 
 def zad24():
     answers = 0
@@ -71,5 +68,3 @@ def zad24():
     print(f"Игра окончена. Правильных ответов: {answers}")
     return
 
-
-#print(zad24())
