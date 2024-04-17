@@ -1,42 +1,70 @@
-def zad41():
-    if n % 3 == 0:
-        print("число делится на 3")
-    else:
-        print("число НЕ делится на 3")
+import random
+
+def zad21():
+    words = []
+    result = ""
+    N = int(input("Введите кол-во слов: "))
+    for i in range(N + 1):
+        word = input("Введите слово: ")
+        words.append(word)
+    for word in words:
+        result += word + " "
+    print(result)
     return
 
-#print(zad41())
 
-def zad42():
-    try:
-        a = float(input("Введите число: "))
-        res = 100 / a
-        return res
-    except ZeroDivisionError:
-        return "Ошибка: деления на ноль!"
-    except ValueError:
-        return "ошибка: пожалуйста, введите число."
 
-#print(zad42())
+def zad22():
+    words = []
+    result = ""
 
-def zad43():
-    date = input("Введите дату")
-    day, month, year = map(int, date.split("."))
-    if day * month == int(str(year)[-2:]):
-        return True
+    while True:
+        word = input("Введите слово: ")
+        if word == "stop":
+            break
+        words.append(word)
+
+    for word in words:
+        result += word + " "
+
+    print(result)
+    return
+
+
+print(zad22())
+
+
+def zad23():
+    word = input("Введите слово: ")
+
+    for letter in word:
+        if letter == "ф":
+            print("Ого! Это редкое слово!")
+            break
     else:
-        return False
+        print("Эх, это не очень редкое слово...")
+    return
 
-print(zad43())
 
-def zad44():
-    n = input("Введите номер билета: ")
-    hl = len(n) // 2
-    fh = sum(map(int, n[:hl]))
-    sh = sum(map(int, n[hl:]))
-    if fh == sh:
-        return True
-    else:
-        return False
 
-print(zad44())
+def zad24():
+    answers = 0
+    errors = 0
+
+    while errors < 3:
+        num1 = random.randint(1, 10)
+        num2 = random.randint(1, 10)
+        correct_result = num1 + num2
+
+        user_answer = input(f"{num1} + {num2} = ")
+
+        if user_answer.isdigit() and int(user_answer) == correct_result:
+            print("Правильно!")
+            answers += 1
+        else:
+            print("Ответ неверный")
+            errors += 1
+
+    print(f"Игра окончена. Правильных ответов: {answers}")
+    return
+

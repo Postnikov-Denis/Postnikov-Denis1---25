@@ -1,70 +1,53 @@
-import random
-
-def zad21():
-    words = []
-    result = ""
-    N = int(input("Введите кол-во слов: "))
-    for i in range(N + 1):
-        word = input("Введите слово: ")
-        words.append(word)
-    for word in words:
-        result += word + " "
-    print(result)
-    return
-
-
-
-def zad22():
-    words = []
-    result = ""
-
-    while True:
-        word = input("Введите слово: ")
-        if word == "stop":
-            break
-        words.append(word)
-
-    for word in words:
-        result += word + " "
-
-    print(result)
-    return
-
-
-print(zad22())
-
-
-def zad23():
-    word = input("Введите слово: ")
-
-    for letter in word:
-        if letter == "ф":
-            print("Ого! Это редкое слово!")
-            break
+def zad1():
+    a = input("Введите пароль: ")
+    a1 = input("Повторно введите пароль: ")
+    if a == a1:
+        print("Пароль принят")
     else:
-        print("Эх, это не очень редкое слово...")
+        print("Пароль не принят")
     return
 
 
+def zad2():
+    a = int(input("Введите номер места: "))
+    if a % 2 == 0 and a<=36:
+        print("верхнее в купе")
+    elif a % 2 != 0 and a<= 36:
+        print("нижнее в купе")
+    elif a % 2 == 0 and a >= 37:
+        print("боковое верхнее")
+    elif a % 2 != 0 and a >= 37:
+        print("боковое нижнее")
+    return
 
-def zad24():
-    answers = 0
-    errors = 0
+def zad3():
+    a = int(input("Введите год: "))
+    if a % 4 == 0 and a % 100 != 0 or a % 400 == 0:
+        print("Год високосный")
+    else:
+        print("Год не является високосным")
+    return
 
-    while errors < 3:
-        num1 = random.randint(1, 10)
-        num2 = random.randint(1, 10)
-        correct_result = num1 + num2
+#print(zad3())
 
-        user_answer = input(f"{num1} + {num2} = ")
 
-        if user_answer.isdigit() and int(user_answer) == correct_result:
-            print("Правильно!")
-            answers += 1
+def zad4():
+    color1 = input("Введите название первого основного цвета: ")
+    color2 = input("Введите название второго основного цвета: ")
+    stock = ["красный", "синий", "желтый"]
+    if color1 not in stock or color2 not in stock:
+        print("Ошибка: введенные цвета не являются основными.")
+    else:
+        if color1 == "красный" and color2 == "синий":
+            secondary_color = "фиолетовый"
+        elif color1 == "красный" and color2 == "желтый":
+            secondary_color = "оранжевый"
+        elif color1 == "синий" and color2 == "желтый":
+            secondary_color = "зеленый"
         else:
-            print("Ответ неверный")
-            errors += 1
+            print("Ошибка: введенные цвета не могут быть смешаны.")
 
-    print(f"Игра окончена. Правильных ответов: {answers}")
+    print("Вторичный цвет:", secondary_color)
     return
 
+#print(zad4())
